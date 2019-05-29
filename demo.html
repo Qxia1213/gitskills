@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.9.1.min.js"></script>
+</head>
+<style>
+.box_disProducts .paraShowList_price.newPriceShow{
+    background:#ccc;
+    padding:40px 48px 40px;
+    overflow: hidden;
+    border:none;
+    display:flex;
+    width:calc(100% - 100px);
+}
+.box_disProducts .paraShowList_price.newPriceShow ul{ float: left;margin:0;padding-right:20px;}
+.box_disProducts .paraShowList_price.newPriceShow ul{white-space:nowrap;}
+.box_disProducts .paraShowList_price.newPriceShow ul li{ display: inline; position: relative;}
+.box_disProducts .paraShowList_price.newPriceShow ul li#skuSalePrice + li{background: red;padding-right: 160px;}
+.box_disProducts .paraShowList_price.newPriceShow ul li.fontcolor{color:#c00;}
+.box_disProducts .paraShowList_price.newPriceShow ul li.fontsize{font-size:35px;line-height:30px;margin-top:-8px; position:absolute; }
+.box_disProducts .shop_param{width:100%;border-bottom:1px solid #dddddd; clear: both; overflow: hidden;padding-bottom: 20px;margin-bottom:20px;}
+.box_disProducts .shop_param>div{float:left; width:25%; height: 30px; overflow: hidden; position: relative;word-wrap:break-word; word-break:keep-all; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.box_disProducts .shop_param>div span{display:inline-block; padding-right:5px;padding-left: 30px;}
+
+</style>
+<body class="box_disProducts">
+    <div class="paraShowList_price newPriceShow">
+        <ul><li>现价</li><li>：</li><li class="fontcolor" style="display:none;">￥</li><li id="skuSalePrice" data-price="33" class="fontcolor fontsize">33</li></ul>
+        <ul><li>市场价</li><li>：</li><li style="display:none;">￥</li><li><s data-price="444" id="skuOriginalPrice">444</s></li></ul>
+        <ul><li>品牌</li><li>：</li><li>品牌品牌品牌品牌品牌品牌品牌</li></ul>
+    </div>
+</body>
+<script>
+$(function(){
+    var array=[];
+    var begin=10.33;
+    var total=0;
+    debugger
+    for(num=1;num<32;num++){
+        begin=begin+0.08
+        array.push(begin);
+    }
+    $.each(array,function(i,item){
+        total=total+item
+    })
+    console.log(total)
+})
+</script>
+</html>
